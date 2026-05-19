@@ -10,9 +10,14 @@
     </script>
 
     <script> 
+      // Her ziyaretçi için rastgele bir benzersiz işlem kimliği oluşturur
+      var randomId = 'TRX_' + Math.floor(Math.random() * 1000000000);
+      
       gtag('event', 'conversion', { 
         'send_to': 'AW-18103245954/_jY_CPPN7q4cEIK5prhD', 
-        'transaction_id': '' 
+        'value': 1.0,
+        'currency': 'USD',
+        'transaction_id': randomId 
       }); 
     </script>
 
@@ -54,6 +59,7 @@
             border-radius: 20px;
             margin-bottom: 20px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            object-fit: cover;
         }
 
         .icon-box {
@@ -119,7 +125,7 @@
 <body>
 
     <div class="success-container">
-        <img src="ElektrikRehberimLOGO.jpg" alt="Elektrik Rehberim" class="logo">
+        <img src="ElektrikRehberimLOGO.png" alt="Elektrik Rehberim" class="logo">
 
         <div class="icon-box">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
