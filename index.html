@@ -7,18 +7,25 @@
       function gtag(){dataLayer.push(arguments);} 
       gtag('js', new Date()); 
       gtag('config', 'AW-18103245954'); 
+
+      // Google Ads Tıklama Takibini Garantiye Alan Fonksiyon
+      function takipVeYonlendir(url) {
+        gtag('event', 'conversion', {
+            'send_to': 'AW-18103245954/_jY_CPPN7q4cElK5prhD',
+            'event_callback': function() {
+               // Kod tetiklendiğinde Google Play Store'u yeni sekmede açar
+               window.open(url, '_blank');
+            }
+        });
+        return false; // Standart HTML yönlendirmesini durdurur, üstteki fonksiyonun çalışmasını bekler
+      }
     </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elektrik Rehberim - Uygulamayı İndir</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
@@ -28,7 +35,6 @@
             align-items: center;
             justify-content: center;
         }
-
         .hero-container {
             text-align: center;
             max-width: 600px;
@@ -39,7 +45,6 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
-
         .app-logo {
             width: 160px;
             height: 160px;
@@ -50,7 +55,6 @@
             border: 2px solid rgba(255, 255, 255, 0.1);
             object-fit: cover;
         }
-
         h1 {
             font-size: 36px;
             font-weight: 800;
@@ -59,14 +63,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
-        p {
-            font-size: 18px;
-            color: #94a3b8;
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-
+        p { font-size: 18px; color: #94a3b8; margin-bottom: 40px; line-height: 1.6; }
         .play-store-btn {
             display: inline-flex;
             align-items: center;
@@ -80,37 +77,17 @@
             font-weight: 600;
             transition: all 0.3s ease;
             box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+            cursor: pointer;
         }
-
         .play-store-btn:hover {
             transform: translateY(-3px);
             background-color: #059669;
             box-shadow: 0 15px 25px rgba(16, 185, 129, 0.4);
         }
-
-        .play-store-btn svg {
-            margin-right: 12px;
-            width: 24px;
-            height: 24px;
-        }
-
-        .footer-links {
-            margin-top: 30px;
-            font-size: 14px;
-        }
-
-        .footer-links a {
-            color: #64748b;
-            text-decoration: none;
-            margin: 0 10px;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: #cbd5e1;
-            text-decoration: underline;
-        }
-
+        .play-store-btn svg { margin-right: 12px; width: 24px; height: 24px; }
+        .footer-links { margin-top: 30px; font-size: 14px; }
+        .footer-links a { color: #64748b; text-decoration: none; margin: 0 10px; transition: color 0.2s; }
+        .footer-links a:hover { color: #cbd5e1; text-decoration: underline; }
         @media (max-width: 480px) {
             h1 { font-size: 28px; }
             p { font-size: 16px; }
@@ -128,13 +105,12 @@
         <h1>Elektrik Rehberim</h1>
         <p>Elektrik mühendisleri, teknisyenler ve öğrenciler için kapsamlı dijital referans aracı. Yönetmelikler, hesaplamalar ve çok daha fazlası cebinizde!</p>
 
-        <a href="https://play.google.com/store/apps/details?id=com.remre.elektrikyonetmelikleri" 
+        <!-- Yenilenen Güvenli Tıklama Butonu -->
+        <a href="#" 
            class="play-store-btn" 
-           target="_blank" 
-           rel="noopener noreferrer"
-           onclick="gtag('event', 'conversion', {'send_to': 'AW-18103245954/_jY_CPPN7q4cElK5prhD'});">
+           onclick="return takipVeYonlendir('https://play.google.com/store/apps/details?id=com.remre.elektrikyonetmelikleri');">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
-                <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/>
+                <path d="M325.3 234.3L104.6 13 l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/>
             </svg>
             Google Play'den İndir
         </a>
